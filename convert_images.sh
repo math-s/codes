@@ -1,6 +1,6 @@
 #!/bin/bash
 
-# This code converts all the files of a dir: PNG into JPG and JPG into PNG
+# This code converts all the files of a dir: PNG into JPG and JPG into PNG, keeping the two versions
 # You must run it inside the dir
 #
 #
