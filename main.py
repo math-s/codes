@@ -1,3 +1,7 @@
+""" -------------------------------------------- """
+""" --You must play with your numeric keyboard-- """
+""" -------------------------------------------- """
+""" -------------------------------------------- """
 class Game:
     def __init__(self):
         self.gameM = [[0, 0, 0],
@@ -44,7 +48,6 @@ class Game:
             self.gameM[0][2] = self.player
             return True
         else:
-
             print("JOGADA INVÁLIDA")
             return False
 
@@ -89,7 +92,8 @@ class Game:
             print("THE GAME IS OVER")
             print("PLAYER " + str(self.winner) + " WON")
 
-    """ ------------------------------------ """
+    """ ---The functions bellow print the board game------------------- """
+    """ ---They are generic functions, they can make any square board---- """
 
     def drawBoard(self):
         c = ""
@@ -117,6 +121,6 @@ class Game:
         c = c + "|"
         return c
 
-
+# TODO: Make the game run while the user still wants 
 g = Game()
 g.match()
