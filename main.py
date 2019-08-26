@@ -2,6 +2,8 @@
 """ --You must play with your numeric keyboard-- """
 """ -------------------------------------------- """
 """ -------------------------------------------- """
+
+
 class Game:
     def __init__(self):
         self.gameM = [[0, 0, 0],
@@ -62,21 +64,22 @@ class Game:
         self.finishGame()
 
     def verifyWinner(self):
-        self.drawBoard()
         for i in range(0, 3):
             if self.gameM[i] == [1, 1, 1] or \
                 self.gameM[0][i] == self.gameM[1][i] == self.gameM[2][i] == 1 or \
                 self.gameM[0][0] == self.gameM[1][1] == self.gameM[2][2] == 1 or \
-                self.gameM[0][2] == self.gameM[1][1] == self.gameM[2][0] == 1 or \
-                self.gameM[i] == [2, 2, 2] or \
+                self.gameM[0][2] == self.gameM[1][1] == self.gameM[2][0] == 1:
+                self.end = True
+                self.winner = 1
+                return True
+            if self.gameM[i] == [2, 2, 2] or \
                 self.gameM[0][i] == self.gameM[1][i] == self.gameM[2][i] == 2 or \
                 self.gameM[0][0] == self.gameM[1][1] == self.gameM[2][2] == 2 or \
                 self.gameM[0][2] == self.gameM[1][1] == self.gameM[2][0] == 2:
                 self.end = True
+                self.winner = 2
                 return True
-            else:
-                self.end = False
-                return False
+        return False
 
     def finishGame(self):
         if not self.end:
@@ -121,6 +124,7 @@ class Game:
         c = c + "|"
         return c
 
-# TODO: Make the game run while the user still wants 
+
+# TODO: Make the game run while the user still wants
 g = Game()
 g.match()
